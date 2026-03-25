@@ -1,1 +1,148 @@
+🔍 Nmap Notes & Practice (Beginner → Intermediate)
 
+📌 Introduction
+
+Nmap (Network Mapper) is a powerful network scanning tool used for:
+
+- Host discovery
+- Port scanning
+- Service & version detection
+- OS fingerprinting
+
+---
+
+⚙️ Basic Syntax
+
+nmap [options] target
+
+Example:
+
+nmap -sS -p- 192.168.1.1
+
+---
+
+🔹 Important Commands I Learned
+
+🔍 Basic Scan
+
+nmap 192.168.1.1
+
+Detects open ports on the target.
+
+---
+
+⚡ Fast Scan
+
+nmap -F 192.168.1.1
+
+Scans top 100 common ports (faster).
+
+---
+
+🧠 Service Version Detection
+
+nmap -sV 192.168.1.1
+
+Detects service versions running on open ports.
+
+---
+
+🛠️ OS Detection
+
+nmap -O 192.168.1.1
+
+Attempts to identify the operating system.
+
+---
+
+🔥 Aggressive Scan
+
+nmap -A 192.168.1.1
+
+Includes:
+
+- OS detection
+- Version detection
+- Script scanning
+- Traceroute
+
+---
+
+🎯 Full Port Scan
+
+nmap -p- 192.168.1.1
+
+Scans all ports (1–65535).
+
+---
+
+🕵️ SYN Scan (Stealth Scan)
+
+nmap -sS 192.168.1.1
+
+Fast and stealthy scan (half-open connection).
+
+---
+
+🧪 My Practice & Understanding
+
+🔹 Example Scan
+
+nmap -p- -sV target_ip
+
+Output Understanding:
+
+- Port 22 open → SSH service running
+- Port 80 open → Web server running
+- Port 445 open → SMB (file sharing)
+
+---
+
+🧠 Key Concepts I Learned
+
+- Open port = a running service
+- Service versions help identify vulnerabilities
+- Every open port is a potential attack surface
+- Nmap is mainly used in the reconnaissance phase
+
+---
+
+🔍 Output Analysis Thinking
+
+- Port 80 open → Website available → Next step: web enumeration
+- Port 22 open → SSH → Possible brute force or credential attack
+- Port 3306 open → Database → High risk if exposed
+
+---
+
+⚠️ Important Notes
+
+- Scanning random internet targets may be illegal
+- Only scan:
+  - Your own network
+  - Authorized lab environments
+
+---
+
+🚀 Tools & Platforms for Practice
+
+- TryHackMe → Beginner-friendly labs
+- Hack The Box → Real-world practice
+
+---
+
+🧠 What I Learned Overall
+
+- Nmap is not just a tool, it is a decision-making tool
+- The most important skill is deciding the next step after scanning
+- Understanding output = real skill
+
+---
+
+🚀 Next Learning Plan
+
+- NSE Scripts ("--script vuln")
+- Web Enumeration (gobuster, dirsearch)
+- Real lab practice (TryHackMe / HTB)
+
+---
